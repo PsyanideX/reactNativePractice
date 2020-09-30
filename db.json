@@ -1,0 +1,541 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "username": "admin",
+      "password": "admin",
+      "email": "admin@mail.com"
+    },
+    {
+      "id": 1,
+      "username": "martin",
+      "password": "1234",
+      "email": "martin@mail.com"
+    },
+    {
+      "id": 2,
+      "username": "jose",
+      "password": "jose",
+      "email": "jose@mail.com"
+    },
+    {
+      "id": 3,
+      "username": "pepa",
+      "password": "pepa",
+      "email": "pepa@mail.com"
+    },
+    {
+      "id": 4,
+      "username": "pili",
+      "password": "pili",
+      "email": "pili@mail.com"
+    },
+    {
+      "id": 5,
+      "username": "manuel",
+      "password": "manuel",
+      "email": "manuel@mail.com"
+    },
+    {
+      "id": 6,
+      "username": "toni",
+      "password": "toni",
+      "email": "toni@mail.com"
+    },
+    {
+      "id": 7,
+      "username": "adri",
+      "password": "adri",
+      "email": "adri@mail.com"
+    },
+    {
+      "id": 8,
+      "username": "vic",
+      "password": "vic",
+      "email": "vic@mail.com"
+    },
+    {
+      "username": "gdfg",
+      "email": "jkljkl@Kjhjk.dsa",
+      "password": "dfgfdg",
+      "id": 9
+    },
+    {
+      "username": "dfsf",
+      "email": "dsd@kjh.dsa",
+      "password": "fdsf",
+      "id": 10
+    },
+    {
+      "username": "redux",
+      "email": "redux@redux.redux",
+      "password": "redux",
+      "id": 11
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "productname": "Lavadora",
+      "productdescription": "Lavadora Balay 7 kg",
+      "price": 380,
+      "department": "Electrodomesticos",
+      "image": "https://media3.bsh-group.com/Product_Shots/435x515/MCSA020978_3TS740C_def.png"
+    },
+    {
+      "id": 1,
+      "productname": "Batidora",
+      "productdescription": "Batidora Moulinex 1300W",
+      "price": 40,
+      "department": "Electrodomesticos",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ikTj-CP5L._AC_SY679_.jpg"
+    },
+    {
+      "id": 2,
+      "productname": "Television",
+      "productdescription": "Television Samsung 55\" 4K",
+      "price": 500,
+      "department": "Imagen",
+      "image": "https://images.samsung.com/is/image/samsung/in-uhdtv-nu7400-ua55nu7470uxxl-185768498?$PD_GALLERY_L_JPG$"
+    },
+    {
+      "id": 3,
+      "productname": "Smartphone",
+      "productdescription": "Smartphone Xiaomi mi 10",
+      "price": 499,
+      "department": "Telefonia",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1585134404.36187772.png"
+    },
+    {
+      "id": 4,
+      "productname": "Radio",
+      "productdescription": "Radio estilo vintage",
+      "price": 55,
+      "department": "Electrodomesticos",
+      "image": "https://accessorihifi.it/2930-large_default/radio-in-legno-vintage-con-cd-e-usb-player-roadstar-hra-1540ue-bt-radio-hifi-home-roadstar.jpg"
+    },
+    {
+      "id": 5,
+      "productname": "Monitor",
+      "productdescription": "Monitor samsung curvo 144Hz 2K 28\"",
+      "price": 250,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51vTDJWp0nL._AC_SY400_.jpg"
+    },
+    {
+      "id": 6,
+      "productname": "Reloj",
+      "productdescription": "Reloj casio",
+      "price": 20,
+      "department": "Gadgets",
+      "image": "https://mundoreloj.net/wp-content/uploads/thumbs_dir/casio-reloj-de-pulsera-unisex-f-91w-1yer-o7q5k83wxrmz2r3p34jwzzb1lcuzcudbraifn7glu0.jpg"
+    },
+    {
+      "id": 7,
+      "productname": "Raton inalambrico",
+      "productdescription": "Raton inalambrico logitech",
+      "price": 45,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/518bU7ROHeL._AC_SY550_.jpg"
+    },
+    {
+      "id": 8,
+      "productname": "Teclado mecanico",
+      "productdescription": "Teclado mecanido HP  gaming",
+      "price": 55,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/719KBL6SNQL._AC_SX466_.jpg"
+    },
+    {
+      "id": 9,
+      "productname": "Portatil ",
+      "productdescription": "Portatil ASUS i5 16GB 1TB",
+      "price": 599,
+      "department": "Informatica",
+      "image": "https://www.worten.es/i/e1c387ac3e8a079497d7d745576ee3069eb65969.jpg"
+    },
+    {
+      "id": 10,
+      "productname": "Headset BT",
+      "productdescription": "Auriculares BlueTooth Sony",
+      "price": 189,
+      "department": "Sonido",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IdLe-%2B6kL._AC_SX355_.jpg"
+    },
+    {
+      "id": 11,
+      "productname": "Altavoz de bolsillo",
+      "productdescription": "Altavoz 10W Xiaomi",
+      "price": 15,
+      "department": "Sonido",
+      "image": "https://www.casademovil.com/media/catalog/product/cache/1/image/600x400/9df78eab33525d08d6e5fb8d27136e95/z/1/z1.jpg"
+    },
+    {
+      "id": 12,
+      "productname": "Altavoz Sony",
+      "productdescription": "Altavoz 50W Sony",
+      "price": 59,
+      "department": "Sonido",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51kQntfQvPL._AC_SY355_.jpg"
+    },
+    {
+      "id": 13,
+      "productname": "Xiaomi airdots",
+      "productdescription": "Auriculares BT Xiaomi airdots",
+      "price": 19,
+      "department": "Sonido",
+      "image": "https://img.pccomponentes.com/articles/22/226265/miar-6.jpg"
+    },
+    {
+      "id": 14,
+      "productname": "Barra de sonido",
+      "productdescription": "Barra de sonido Seinheisser",
+      "price": 180,
+      "department": "Sonido",
+      "image": "https://i.blogs.es/b0c105/sennheiser-ambeo-soundbar/450_1000.jpg"
+    },
+    {
+      "id": 15,
+      "productname": "iPhone X Plus",
+      "productdescription": "Smartphone iPhone X Plus 8Gb 512Gb",
+      "price": 999,
+      "department": "Telefonia",
+      "image": "https://i.blogs.es/1d8ed5/1366_2000-3/1366_2000.jpg"
+    },
+    {
+      "id": 16,
+      "productname": "Portatil Lenovo",
+      "productdescription": "Lenovo ThinkPad E590 15.6\"",
+      "price": 599,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71qWXG8fdiL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 17,
+      "productname": "Monitor LG",
+      "productdescription": "LG 22EN33 1080p",
+      "price": 99,
+      "department": "Informatica",
+      "image": "https://www.worten.es/i/48538ba2cdb450f06664bf7107e0bca00d82cb64.jpg"
+    },
+    {
+      "id": 18,
+      "productname": "Bateria Externa",
+      "productdescription": "BAteria externa 10000mAh 2 USB 2.1A",
+      "price": 15,
+      "department": "Gadgets",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61pyRFdoMqL._AC_SY355_.jpg"
+    },
+    {
+      "id": 19,
+      "productname": "Microondas",
+      "productdescription": "Microondas OKI 800W",
+      "price": 55,
+      "department": "Electrodomesticos",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71uRdJEzvBL._AC_SX522_.jpg"
+    },
+    {
+      "id": 20,
+      "productname": "HDD Externo",
+      "productdescription": "HDD Externo Toshiba 1Tb",
+      "price": 60,
+      "department": "Gadgets",
+      "image": "https://i2.wp.com/www.andro-life.com/wp-content/uploads/2017/03/Disco-duro-externo.jpg?fit=750%2C497&ssl=1"
+    },
+    {
+      "id": 21,
+      "productname": "Cargador iPhone",
+      "productdescription": "Cargador iPhone",
+      "price": 30,
+      "department": "Telefonia",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/31bxey32VEL._AC_SY400_.jpg"
+    },
+    {
+      "id": 22,
+      "productname": "Samsung Galaxy 10",
+      "productdescription": "Samsung Galaxy 10 8GB 512Gb",
+      "price": 899,
+      "department": "Telefonia",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/618bEcxx-aL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 23,
+      "productname": "iPhone 11",
+      "productdescription": "iPhone 11 12Gb 1T",
+      "price": 1299,
+      "department": "Telefonia",
+      "image": "https://csmobiles.com/18757-large_default/apple-iphone-11-128gb-negro.jpg"
+    },
+    {
+      "id": 24,
+      "productname": "Horno Balay",
+      "productdescription": "Horno Pirolitico Balay 2000W",
+      "price": 399,
+      "department": "Electrodomesticos",
+      "image": "https://media3.bsh-group.com/Product_Shots/1600x900/MCSA00454214_79370_3HB503BM_def.png"
+    },
+    {
+      "id": 25,
+      "productname": "Television",
+      "productdescription": "Television 24 1080p",
+      "price": 99,
+      "department": "Imagen",
+      "image": "https://static.fnac-static.com/multimedia/Images/ES/MC/c4/a1/64/6595012/1540-1/tsp20181024100841/Televisor-JVC-Negro-24-pulgadas.jpg"
+    },
+    {
+      "id": 27,
+      "productname": "Proyector",
+      "productdescription": "Proyector Sony 1080p nativo",
+      "price": 399,
+      "department": "Imagen",
+      "image": "https://www.maxvisual.es/WebRoot/StoreLES/Shops/62028366/5065/C4D9/6B29/5D41/2085/C0A8/29BA/75BE/f39c54d1-946d-403d-8383-fca4a5f5ba7a.jpg"
+    },
+    {
+      "id": 24,
+      "productname": "Nevera Balay",
+      "productdescription": "Nevera Balay estilo americano",
+      "price": 699,
+      "department": "Electrodomesticos",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61RveeWGI-L._AC_SX466_.jpg"
+    },
+    {
+      "id": 26,
+      "productname": "Television",
+      "productdescription": "Television 43\" LG Android",
+      "price": 259,
+      "department": "Imagen",
+      "image": "https://img.pccomponentes.com/articles/24/247604/43-4.jpg"
+    }
+  ],
+  "wish-list": [
+    {
+      "userId": 1,
+      "productId": 0
+    },
+    {
+      "userId": 3,
+      "productId": 1
+    },
+    {
+      "userId": 2,
+      "productId": 1
+    },
+    {
+      "userId": 4,
+      "productId": 2
+    },
+    {
+      "userId": 2,
+      "productId": 3
+    },
+    {
+      "userId": 3,
+      "productId": 4
+    },
+    {
+      "userId": 1,
+      "productId": 4
+    },
+    {
+      "userId": 1,
+      "productId": 3
+    },
+    {
+      "userId": 4,
+      "productId": 1
+    },
+    {
+      "userId": 7,
+      "productId": 15
+    },
+    {
+      "userId": 5,
+      "productId": 16
+    },
+    {
+      "userId": 8,
+      "productId": 17
+    },
+    {
+      "userId": 1,
+      "productId": 13
+    },
+    {
+      "userId": 2,
+      "productId": 11
+    },
+    {
+      "userId": 5,
+      "productId": 11
+    },
+    {
+      "userId": 7,
+      "productId": 9
+    },
+    {
+      "userId": 8,
+      "productId": 13
+    },
+    {
+      "userId": 8,
+      "productId": 21
+    }
+  ],
+  "deals": [
+    {
+      "id": 0,
+      "productname": "Lavadora",
+      "productdescription": "Lavadora Balay 7 kg",
+      "price": 380,
+      "department": "Electrodomesticos",
+      "image": "https://media3.bsh-group.com/Product_Shots/435x515/MCSA020978_3TS740C_def.png",
+      "dealprice": "350"
+    },
+    {
+      "id": 1,
+      "productname": "Batidora",
+      "productdescription": "Batidora Moulinex 1300W",
+      "price": 40,
+      "department": "Electrodomesticos",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ikTj-CP5L._AC_SY679_.jpg",
+      "dealprice": "20"
+    },
+    {
+      "id": 2,
+      "productname": "Television",
+      "productdescription": "Television Samsung 55\" 4K",
+      "price": 500,
+      "department": "Imagen",
+      "image": "https://images.samsung.com/is/image/samsung/in-uhdtv-nu7400-ua55nu7470uxxl-185768498?$PD_GALLERY_L_JPG$",
+      "dealprice": "450"
+    },
+    {
+      "id": 3,
+      "productname": "Smartphone",
+      "productdescription": "Smartphone Xiaomi mi 10",
+      "price": 499,
+      "department": "Telefonia",
+      "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1585134404.36187772.png",
+      "dealprice": "350"
+    },
+    {
+      "id": 4,
+      "productname": "Radio",
+      "productdescription": "Radio estilo vintage",
+      "price": 55,
+      "department": "Electrodomesticos",
+      "image": "https://accessorihifi.it/2930-large_default/radio-in-legno-vintage-con-cd-e-usb-player-roadstar-hra-1540ue-bt-radio-hifi-home-roadstar.jpg",
+      "dealprice": "45"
+    },
+    {
+      "id": 5,
+      "productname": "Monitor",
+      "productdescription": "Monitor samsung curvo 144Hz 2K 28\"",
+      "price": 250,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51vTDJWp0nL._AC_SY400_.jpg",
+      "dealprice": "210"
+    },
+    {
+      "id": 6,
+      "productname": "Reloj",
+      "productdescription": "Reloj casio",
+      "price": 20,
+      "department": "Gadgets",
+      "image": "https://mundoreloj.net/wp-content/uploads/thumbs_dir/casio-reloj-de-pulsera-unisex-f-91w-1yer-o7q5k83wxrmz2r3p34jwzzb1lcuzcudbraifn7glu0.jpg",
+      "dealprice": "10"
+    },
+    {
+      "id": 7,
+      "productname": "Raton inalambrico",
+      "productdescription": "Raton inalambrico logitech",
+      "price": 45,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51mfEPji2wL._AC_SX425_.jpg",
+      "dealprice": "20"
+    },
+    {
+      "id": 8,
+      "productname": "Teclado mecanico",
+      "productdescription": "Teclado mecanido HP  gaming",
+      "price": 55,
+      "department": "Informatica",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/719KBL6SNQL._AC_SX466_.jpg",
+      "dealprice": "20"
+    },
+    {
+      "id": 9,
+      "productname": "Portatil ",
+      "productdescription": "Portatil ASUS i5 16GB 1TB",
+      "price": 599,
+      "department": "Informatica",
+      "image": "https://www.worten.es/i/e1c387ac3e8a079497d7d745576ee3069eb65969.jpg",
+      "dealprice": "520"
+    },
+    {
+      "id": 10,
+      "productname": "Headset BT",
+      "productdescription": "Auriculares BlueTooth Sony",
+      "price": 189,
+      "department": "Sonido",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51IdLe-%2B6kL._AC_SX355_.jpg",
+      "dealprice": "120"
+    }
+  ],
+  "departments": [
+    {
+      "id": 0,
+      "name": "Telefonia"
+    },
+    {
+      "id": 1,
+      "name": "Electrodomesticos"
+    },
+    {
+      "id": 2,
+      "name": "Gadgets"
+    },
+    {
+      "id": 3,
+      "name": "Informatica"
+    },
+    {
+      "id": 4,
+      "name": "Imagen"
+    },
+    {
+      "id": 5,
+      "name": "Sonido"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user": "martin",
+      "productIds": [1, 2, 3],
+      "totalPrice": "1039",
+      "date": "17/09/2020"
+    },
+    {
+      "id": 2,
+      "user": "martin",
+      "productIds": [24],
+      "totalPrice": "399",
+      "date": "16/09/2020"
+    },
+    {
+      "id": 3,
+      "user": "martin",
+      "productIds": [8],
+      "totalPrice": "55",
+      "date": "11/09/2019"
+    },
+    {
+      "user": "martin",
+      "productIds": [1],
+      "totalPrice": 20,
+      "date": "18/09/2020",
+      "id": 4
+    }
+  ]
+}
