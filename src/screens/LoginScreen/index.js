@@ -1,38 +1,100 @@
 import React, {Component} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {
+  usernameValidation,
+  passwordValidation,
+} from 'tallerNative/src/shared/validators';
+import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
 import {HR} from 'tallerNative/src/components';
 import {StyleSheet} from 'react-native';
 import baseStyles from 'tallerNative/src/styles/baseStyles';
 
 export default class LoginScreen extends Component {
+  constructor() {
+    super();
+    this.redirectToRegister = this.redirectToRegister.bind(this);
+    this.submitLoginHandler = this.submitLoginHandler.bind(this);
+    this.login = this.login.bind(this);
+    this.state = {
+      username: '',
+      password: '',
+    };
+  }
   render() {
     return (
       <View style={[baseStyles.container]}>
-        <Text style={[loginStyles.header]}> Registro </Text>
+        <Text style={[loginStyles.header]}> Login </Text>
         <View style={[loginStyles.formContainer]}>
           <TextInput
             placeholder="Username"
             placeholderTextColor="white"
-            style={[loginStyles.input]}></TextInput>
+            style={[loginStyles.input]}
+            onChangeText={username =>
+              this.setState({username: username})
+            }></TextInput>
           <HR />
           <TextInput
             placeholder="Password"
             placeholderTextColor="white"
-            style={[loginStyles.input]}></TextInput>
+            style={[loginStyles.input]}
+            onChangeText={password =>
+              this.setState({password: password})
+            }></TextInput>
           <HR />
-          <TouchableOpacity style={loginStyles.button} onPress={() => {}}>
-            <Text style={loginStyles.buttonText}>Registrarse</Text>
+          <TouchableOpacity
+            style={loginStyles.button}
+            onPress={() => this.submitLoginHandler()}>
+            <Text style={loginStyles.buttonText}>Login</Text>
           </TouchableOpacity>
           <View style={loginStyles.goToLogin}>
             <Text>¿Necesitas?</Text>
-            <TouchableOpacity style={loginStyles.button} onPress={() => {}}>
+            <TouchableOpacity
+              style={loginStyles.button}
+              onPress={() => this.redirectToRegister()}>
               <Text style={loginStyles.buttonText}>Registrarse</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
     );
+  }
+
+  redirectToRegister() {
+    this.props.navigation.navigate('Register');
+  }
+
+  login(username) {
+    // dispatch(loggedIn(username));
+    // history.push('/home');
+    this.props.navigation.navigate('Home');
+  }
+
+  submitLoginHandler() {
+    const isValidUsername = usernameValidation('username', this.state.username);
+    const isValidPasswword = passwordValidation(
+      'password',
+      this.state.password,
+    );
+    let username = this.state.username;
+    let password = this.state.password;
+    if (!isValidUsername && !isValidPasswword) {
+      fetch(`${apiUrl}/users/?username=${this.state.username}`, getRequest)
+        .then(response => response.json())
+        .then(response => {
+          if (
+            response[0] &&
+            response[0].username === username &&
+            response[0].password === password
+          ) {
+            this.login(username);
+          } else {
+            alert('Usuario o contraseña incorrectos');
+          }
+        });
+    } else {
+      alert('El usuario o la contraseña no cumplen los requisitos');
+    }
   }
 }
 
