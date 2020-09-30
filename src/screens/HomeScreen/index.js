@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
-import {HR} from 'tallerNative/src/components';
+import {HR, Search} from 'tallerNative/src/components';
 import {StyleSheet} from 'react-native';
 import baseStyles from 'tallerNative/src/styles/baseStyles';
 
@@ -38,6 +38,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={[baseStyles.container, {width: '100%'}]}>
+        <Search onSearch={() => {}} />
         <SectionList
           style={{
             width: '100%',
