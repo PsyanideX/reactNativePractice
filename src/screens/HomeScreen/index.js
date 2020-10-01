@@ -47,17 +47,17 @@ export default class HomeScreen extends Component {
             flex: 1,
           }}
           renderSectionHeader={({section: {title}}) => (
-            <Text style={{fontWeight: 'bold'}}>{title}</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20}}>{title}</Text>
           )}
           sections={[
             {
-              title: 'Deals',
+              title: 'Nuestras ofertas del día',
               data: this.state.deals,
               renderItem: ({item, index, section: {title, data}}) =>
                 this.renderItem({item}),
             },
             {
-              title: 'Products',
+              title: 'Nuestros productos destacados',
               data: this.state.products,
               renderItem: ({item, index, section: {title, data}}) =>
                 this.renderItem({item}),
