@@ -37,6 +37,7 @@ export default class LoginScreen extends Component {
           <TextInput
             placeholder="Password"
             placeholderTextColor="white"
+            secureTextEntry={true}
             style={[loginStyles.input]}
             onChangeText={password =>
               this.setState({password: password})
@@ -48,7 +49,7 @@ export default class LoginScreen extends Component {
             <Text style={loginStyles.buttonText}>Login</Text>
           </TouchableOpacity>
           <View style={loginStyles.goToLogin}>
-            <Text>¿Necesitas?</Text>
+            <Text>¿Necesitas una cuenta?</Text>
             <TouchableOpacity
               style={loginStyles.button}
               onPress={() => this.redirectToRegister()}>
