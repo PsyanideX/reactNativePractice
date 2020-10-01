@@ -129,7 +129,7 @@ const homeStyles = StyleSheet.create({
     backgroundColor: '#036564',
     padding: 10,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
   },
   itemImage: {
     backgroundColor: 'white',
