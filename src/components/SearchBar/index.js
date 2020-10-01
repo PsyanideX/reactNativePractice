@@ -13,6 +13,7 @@ export default class Search extends Component {
       search: '',
     };
     this.departmentRedirect = this.departmentRedirect.bind(this);
+    this.search = this.search.bind(this);
   }
   componentDidMount() {
     fetch(`${apiUrl}/departments`, getRequest)
@@ -21,7 +22,12 @@ export default class Search extends Component {
   }
 
   departmentRedirect(direction) {
-    this.props.navigation.navigate('CAMBIAR');
+    this.props.navigation.navigate('Products', {deparment: direction});
+  }
+
+  search() {
+    this.props.onSearch(this.state.search);
+    this.props.navigation.navigate('Products', {search: this.state.search});
   }
 
   render() {
@@ -42,11 +48,7 @@ export default class Search extends Component {
             }></TextInput>
         </View>
         <View style={searchStyles.searchButton}>
-          <TouchableOpacity
-            onPress={() => {
-              this.props.onSearch(this.state.search),
-                this.props.navigation.navigate('Products');
-            }}>
+          <TouchableOpacity onPress={() => this.search()}>
             <Icon name="search" type="material" color="white" />
           </TouchableOpacity>
         </View>

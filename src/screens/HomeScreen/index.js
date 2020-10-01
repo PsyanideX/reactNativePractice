@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={[baseStyles.container, {width: '100%'}]}>
-        <Search onSearch={() => {}} />
+        <Search onSearch={() => {}} navigation={this.props.navigation} />
         <SectionList
           style={{
             width: '100%',
