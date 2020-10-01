@@ -48,11 +48,11 @@ export default class ProductsScreen extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (
       prevState.searchQuery !== this.state.searchQuery ||
-      prevState.department !== this.state.department
+      prevProps.route.params.department !== this.props.route.params.department
     ) {
       let department = this.props.route.params.department;
       this.setState({department: department});
-      if (!department) {
+      if (prevState.searchQuery !== this.state.searchQuery) {
         this.setState({searchQuery: this.props.route.params.search});
         let url = `${apiUrl}/products/?productdescription_like=${this.props.route.params.search}`;
         fetch(url, getRequest)
