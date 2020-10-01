@@ -21,8 +21,8 @@ export default class Search extends Component {
       .then(response => this.setState({departments: response}));
   }
 
-  departmentRedirect(direction) {
-    this.props.navigation.navigate('Products', {deparment: direction});
+  departmentRedirect(department) {
+    this.props.navigation.navigate('Products', {department: department});
   }
 
   search() {
