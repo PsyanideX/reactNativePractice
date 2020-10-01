@@ -1,3 +1,4 @@
 import HR from './HR';
+import Search from './SearchBar';
 
-export {HR};
+export {HR, Search};
