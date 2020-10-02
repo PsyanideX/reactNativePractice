@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   SectionList,
+  TouchableOpacity,
 } from 'react-native';
 import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
@@ -76,9 +77,9 @@ export default class ProductsScreen extends Component {
     this.setState({searchQuery: search});
   }
 
-  renderItem = ({item}) => {
-    return <Item item={item} />;
-  };
+  renderItem({item}) {
+    return <Item item={item} navigation={this.props.navigation} />;
+  }
 
   render() {
     return (
@@ -95,7 +96,11 @@ export default class ProductsScreen extends Component {
             flex: 1,
           }}
           data={this.state.products}
-          renderItem={this.renderItem}
+          //renderItem={this.renderItem}
+          renderItem={({item}) => (
+            <Item item={item} navigation={this.props.navigation} />
+          )}
+          extraData={this.props}
           keyExtractor={item => item.id}
         />
       </View>
@@ -103,22 +108,25 @@ export default class ProductsScreen extends Component {
   }
 }
 
-const Item = ({item}) => {
+const Item = ({item, navigation}) => {
   return (
-    <View style={homeStyles.item}>
-      <Image style={homeStyles.itemImage} source={{uri: item.image}} />
-      <View style={homeStyles.itemDescriptionContainer}>
-        <Text style={homeStyles.itemDescription}>{item.productname}</Text>
-        <Text style={homeStyles.itemDescription}>
-          {item.productdescription}
-        </Text>
-        <View style={homeStyles.priceContainer}>
-          <Text style={[homeStyles.itemDescription, homeStyles.price]}>
-            {`${item.price.toString()} €`}
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Product', {item: item})}>
+      <View style={homeStyles.item}>
+        <Image style={homeStyles.itemImage} source={{uri: item.image}} />
+        <View style={homeStyles.itemDescriptionContainer}>
+          <Text style={homeStyles.itemDescription}>{item.productname}</Text>
+          <Text style={homeStyles.itemDescription}>
+            {item.productdescription}
           </Text>
+          <View style={homeStyles.priceContainer}>
+            <Text style={[homeStyles.itemDescription, homeStyles.price]}>
+              {`${item.price.toString()} €`}
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -129,7 +137,7 @@ const homeStyles = StyleSheet.create({
     backgroundColor: '#036564',
     padding: 10,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
   },
   itemImage: {
     backgroundColor: 'white',
