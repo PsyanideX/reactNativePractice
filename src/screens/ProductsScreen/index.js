@@ -102,7 +102,7 @@ export default class ProductsScreen extends Component {
             <Item item={item} navigation={this.props.navigation} />
           )}
           extraData={this.props}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id + item.productname}
         />
       </View>
     );
