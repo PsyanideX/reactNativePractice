@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
-import {HR, Search} from 'tallerNative/src/components';
+import {Navbar, Search} from 'tallerNative/src/components';
 import {StyleSheet} from 'react-native';
 import baseStyles from 'tallerNative/src/styles/baseStyles';
 
@@ -83,6 +83,7 @@ export default class ProductsScreen extends Component {
   render() {
     return (
       <View style={[baseStyles.container, {width: '100%'}]}>
+        <Navbar navigation={this.props.navigation} />
         <Search
           onSearch={this.handleSearch}
           navigation={this.props.navigation}

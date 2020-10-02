@@ -11,7 +11,6 @@ export default class Navbar extends Component {
     this.state = {
       isPanelOpen: false,
     };
-    this.togglePanel = this.togglePanel.bind(this);
   }
 
   /*togglePanel() {
@@ -27,16 +26,16 @@ export default class Navbar extends Component {
   render() {
     return (
       <View style={navbarStyles.navbar}>
-        <Drawer
+        {/* <Drawer
           ref={ref => (this._drawer = ref)}
           type="static"
           tapToClose={true}
           styles={drawerStyles}
           side="right"
-          content={<Text>HOLA</Text>}></Drawer>
+          content={<Text>HOLA</Text>}></Drawer> */}
 
         <Text
-          onPress={this.props.navigation.navigate('Home')}
+          onPress={() => this.props.navigation.navigate('Home')}
           style={navbarStyles.logo}>
           Ecom
         </Text>
@@ -44,7 +43,7 @@ export default class Navbar extends Component {
           <Icon name="shopping-cart" type="font-awesome" color="#033649" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={this.togglePanel()}
+          //onPress={this.togglePanel()}
           style={navbarStyles.profile}>
           <Icon name="person" type="material" color="#033649" />
         </TouchableOpacity>
