@@ -5,6 +5,7 @@ import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
 import {StyleSheet} from 'react-native';
 import baseStyles from 'tallerNative/src/styles/baseStyles';
+import {Navbar} from 'tallerNative/src/components';
 
 export default class ProductScreen extends Component {
   constructor(props) {
@@ -52,47 +53,51 @@ export default class ProductScreen extends Component {
 
   render() {
     return (
-      <View style={productStyles.item}>
-        <Image
-          style={productStyles.itemImage}
-          source={{uri: this.props.route.params.item.image}}
-        />
-        <View style={productStyles.itemDescriptionContainer}>
-          <Text style={[productStyles.title, productStyles.itemDescription]}>
-            {this.props.route.params.item.productname}
-          </Text>
-          <Text style={[productStyles.text, productStyles.itemDescription]}>
-            {this.props.route.params.item.productdescription}
-          </Text>
-          <View style={productStyles.priceContainer}>
-            <Text style={[productStyles.itemDescription, productStyles.price]}>
-              {`${this.props.route.params.item.price.toString()} €`}
+      <View style={baseStyles.container}>
+        <Navbar navigation={this.props.navigation} />
+        <View style={productStyles.item}>
+          <Image
+            style={productStyles.itemImage}
+            source={{uri: this.props.route.params.item.image}}
+          />
+          <View style={productStyles.itemDescriptionContainer}>
+            <Text style={[productStyles.title, productStyles.itemDescription]}>
+              {this.props.route.params.item.productname}
             </Text>
-          </View>
-        </View>
-        <View style={{flex: 2, padding: 10}}>
-          <View style={productStyles.quantityButtonsContainer}>
-            <TouchableOpacity
-              style={productStyles.quantityButtons}
-              onPress={() => this.substractOneUnity()}>
-              <Icon name="remove" type="material" color="white" />
-            </TouchableOpacity>
-            <Text style={productStyles.quantityText}>
-              {this.state.quantity.toString()}
+            <Text style={[productStyles.text, productStyles.itemDescription]}>
+              {this.props.route.params.item.productdescription}
             </Text>
-            <TouchableOpacity
-              style={productStyles.quantityButtons}
-              onPress={() => this.addOneUnity()}>
-              <Icon name="add" type="material" color="white" />
-            </TouchableOpacity>
+            <View style={productStyles.priceContainer}>
+              <Text
+                style={[productStyles.itemDescription, productStyles.price]}>
+                {`${this.props.route.params.item.price.toString()} €`}
+              </Text>
+            </View>
           </View>
-          <View style={productStyles.buyButtonsContainer}>
-            <TouchableOpacity style={productStyles.buyButtons}>
-              <Text style={productStyles.buyText}>Añadir al carrito</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={productStyles.buyButtons}>
-              <Text style={productStyles.buyText}>Comprar</Text>
-            </TouchableOpacity>
+          <View style={{flex: 2, padding: 10}}>
+            <View style={productStyles.quantityButtonsContainer}>
+              <TouchableOpacity
+                style={productStyles.quantityButtons}
+                onPress={() => this.substractOneUnity()}>
+                <Icon name="remove" type="material" color="white" />
+              </TouchableOpacity>
+              <Text style={productStyles.quantityText}>
+                {this.state.quantity.toString()}
+              </Text>
+              <TouchableOpacity
+                style={productStyles.quantityButtons}
+                onPress={() => this.addOneUnity()}>
+                <Icon name="add" type="material" color="white" />
+              </TouchableOpacity>
+            </View>
+            <View style={productStyles.buyButtonsContainer}>
+              <TouchableOpacity style={productStyles.buyButtons}>
+                <Text style={productStyles.buyText}>Añadir al carrito</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={productStyles.buyButtons}>
+                <Text style={productStyles.buyText}>Comprar</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
