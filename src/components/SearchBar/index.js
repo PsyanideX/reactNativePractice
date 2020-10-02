@@ -5,6 +5,13 @@ import {Icon} from 'react-native-elements';
 import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 import {StyleSheet} from 'react-native';
 
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from 'react-native-popup-menu';
+
 export default class Search extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +28,8 @@ export default class Search extends Component {
       .then(response => this.setState({departments: response}));
   }
 
-  departmentRedirect(direction) {
-    this.props.navigation.navigate('Products', {deparment: direction});
+  departmentRedirect(department) {
+    this.props.navigation.navigate('Products', {department: department});
   }
 
   search() {
@@ -34,9 +41,22 @@ export default class Search extends Component {
     return (
       <View style={searchStyles.searchContainer}>
         <View style={searchStyles.departmentButton}>
-          <TouchableOpacity>
-            <Icon name="menu" type="material" color="white" />
-          </TouchableOpacity>
+          <Menu>
+            <MenuTrigger>
+              <Icon name="menu" type="material" color="white" />
+            </MenuTrigger>
+            <MenuOptions customStyles={dropdownStyles}>
+              {this.state.departments.map(department => (
+                <MenuOption
+                  key={department.id}
+                  onSelect={() => this.departmentRedirect(department.name)}>
+                  <Text style={searchStyles.departmentItem}>
+                    {department.name}
+                  </Text>
+                </MenuOption>
+              ))}
+            </MenuOptions>
+          </Menu>
         </View>
         <View style={searchStyles.searchInputContainer}>
           <TextInput
@@ -92,4 +112,16 @@ const searchStyles = StyleSheet.create({
     backgroundColor: '#036564',
     borderRadius: 3,
   },
+  departmentItem: {
+    padding: 2,
+  },
 });
+
+const dropdownStyles = {
+  optionsContainer: {
+    backgroundColor: '#eaeaea',
+  },
+  optionText: {
+    color: '#033649',
+  },
+};

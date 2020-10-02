@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  ScrollView,
-  Image,
-  FlatList,
-  SectionList,
-} from 'react-native';
+import {Text, View, Image, TouchableOpacity, SectionList} from 'react-native';
 import {apiUrl, getRequest} from 'tallerNative/src/shared/constants';
 
-import {HR, Search} from 'tallerNative/src/components';
+import {Navbar, Search} from 'tallerNative/src/components';
 import {StyleSheet} from 'react-native';
 import baseStyles from 'tallerNative/src/styles/baseStyles';
 
@@ -32,12 +25,13 @@ export default class HomeScreen extends Component {
       .then(response => this.setState({products: response}));
   }
 
-  renderItem = ({item}) => {
-    return <Item item={item} />;
+  renderItem = ({item}, navigation) => {
+    return <Item item={item} navigation={navigation} />;
   };
   render() {
     return (
       <View style={[baseStyles.container, {width: '100%'}]}>
+        <Navbar navigation={this.props.navigation} />
         <Search onSearch={() => {}} navigation={this.props.navigation} />
         <SectionList
           style={{
@@ -47,20 +41,22 @@ export default class HomeScreen extends Component {
             flex: 1,
           }}
           renderSectionHeader={({section: {title}}) => (
-            <Text style={{fontWeight: 'bold', fontSize: 20}}>{title}</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20, color: '#033649'}}>
+              {title}
+            </Text>
           )}
           sections={[
             {
               title: 'Nuestras ofertas del día',
               data: this.state.deals,
               renderItem: ({item, index, section: {title, data}}) =>
-                this.renderItem({item}),
+                this.renderItem({item}, this.props.navigation),
             },
             {
               title: 'Nuestros productos destacados',
               data: this.state.products,
               renderItem: ({item, index, section: {title, data}}) =>
-                this.renderItem({item}),
+                this.renderItem({item}, this.props.navigation),
             },
           ]}
           keyExtractor={(item, index) => item.id + index}
@@ -70,33 +66,36 @@ export default class HomeScreen extends Component {
   }
 }
 
-const Item = ({item}) => {
+const Item = ({item, navigation}) => {
   return (
-    <View style={homeStyles.item}>
-      <Image style={homeStyles.itemImage} source={{uri: item.image}} />
-      <View style={homeStyles.itemDescriptionContainer}>
-        <Text style={homeStyles.itemDescription}>{item.productname}</Text>
-        <Text style={homeStyles.itemDescription}>
-          {item.productdescription}
-        </Text>
-        <View style={homeStyles.priceContainer}>
-          {item.dealprice ? (
-            <React.Fragment>
-              <Text style={[homeStyles.itemDescription, homeStyles.oldPrice]}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Product', {item: item})}>
+      <View style={homeStyles.item}>
+        <Image style={homeStyles.itemImage} source={{uri: item.image}} />
+        <View style={homeStyles.itemDescriptionContainer}>
+          <Text style={homeStyles.itemDescription}>{item.productname}</Text>
+          <Text style={homeStyles.itemDescription}>
+            {item.productdescription}
+          </Text>
+          <View style={homeStyles.priceContainer}>
+            {item.dealprice ? (
+              <React.Fragment>
+                <Text style={[homeStyles.itemDescription, homeStyles.oldPrice]}>
+                  {`${item.price.toString()} €`}
+                </Text>
+                <Text style={[homeStyles.itemDescription, homeStyles.price]}>
+                  {`${item.dealprice.toString()} €`}
+                </Text>
+              </React.Fragment>
+            ) : (
+              <Text style={[homeStyles.itemDescription, homeStyles.price]}>
                 {`${item.price.toString()} €`}
               </Text>
-              <Text style={[homeStyles.itemDescription, homeStyles.price]}>
-                {`${item.dealprice.toString()} €`}
-              </Text>
-            </React.Fragment>
-          ) : (
-            <Text style={[homeStyles.itemDescription, homeStyles.price]}>
-              {`${item.price.toString()} €`}
-            </Text>
-          )}
+            )}
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -107,7 +106,7 @@ const homeStyles = StyleSheet.create({
     backgroundColor: '#036564',
     padding: 10,
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
   },
   itemImage: {
     backgroundColor: 'white',

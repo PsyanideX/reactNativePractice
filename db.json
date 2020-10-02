@@ -289,7 +289,7 @@
       "image": "https://static.fnac-static.com/multimedia/Images/ES/MC/c4/a1/64/6595012/1540-1/tsp20181024100841/Televisor-JVC-Negro-24-pulgadas.jpg"
     },
     {
-      "id": 27,
+      "id": 26,
       "productname": "Proyector",
       "productdescription": "Proyector Sony 1080p nativo",
       "price": 399,
@@ -297,7 +297,7 @@
       "image": "https://www.maxvisual.es/WebRoot/StoreLES/Shops/62028366/5065/C4D9/6B29/5D41/2085/C0A8/29BA/75BE/f39c54d1-946d-403d-8383-fca4a5f5ba7a.jpg"
     },
     {
-      "id": 24,
+      "id": 27,
       "productname": "Nevera Balay",
       "productdescription": "Nevera Balay estilo americano",
       "price": 699,
@@ -305,7 +305,7 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/61RveeWGI-L._AC_SX466_.jpg"
     },
     {
-      "id": 26,
+      "id": 28,
       "productname": "Television",
       "productdescription": "Television 43\" LG Android",
       "price": 259,
@@ -518,37 +518,27 @@
     {
       "id": 1,
       "user": "martin",
-      "productIds": [
-        1,
-        2,
-        3
-      ],
+      "productIds": [1, 2, 3],
       "totalPrice": "1039",
       "date": "17/09/2020"
     },
     {
       "id": 2,
       "user": "martin",
-      "productIds": [
-        24
-      ],
+      "productIds": [24],
       "totalPrice": "399",
       "date": "16/09/2020"
     },
     {
       "id": 3,
       "user": "martin",
-      "productIds": [
-        8
-      ],
+      "productIds": [8],
       "totalPrice": "55",
       "date": "11/09/2019"
     },
     {
       "user": "martin",
-      "productIds": [
-        1
-      ],
+      "productIds": [1],
       "totalPrice": 20,
       "date": "18/09/2020",
       "id": 4
