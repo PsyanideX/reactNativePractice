@@ -48,6 +48,7 @@ export default class Search extends Component {
             <MenuOptions customStyles={dropdownStyles}>
               {this.state.departments.map(department => (
                 <MenuOption
+                  key={department.id}
                   onSelect={() => this.departmentRedirect(department.name)}>
                   <Text style={searchStyles.departmentItem}>
                     {department.name}
